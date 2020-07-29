@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+
+import pyfiglet
+from fun import *
+import os
+os.system("clear")
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+result = pyfiglet.figlet_format("Security And Performance for APACHE",font = "slant")
+line = pyfiglet.figlet_format("-----------",font = "slant")
+print(bcolors.HEADER +line+ bcolors.ENDC)
+print(bcolors.HEADER +result+ bcolors.ENDC)
+print(bcolors.HEADER +bcolors.BOLD+"ver:1\nRasoolIzac"+bcolors.ENDC+ bcolors.ENDC)
+print(bcolors.HEADER +line+ bcolors.ENDC)
+print(bcolors.WARNING+bcolors.BOLD+'[1]Security    [2]Perfomance    [3]Both    [q]Exit'+bcolors.ENDC+ bcolors.ENDC)
+
+packageNumber=input(bcolors.WARNING +bcolors.BOLD+"Enter Number Of Package : "+bcolors.ENDC+ bcolors.ENDC)
+while(1):
+    if(packageNumber=='1'):
+        security();
+        break;
+    elif(packageNumber=='2'):
+        performance();
+        break;
+    elif(packageNumber=='3'):
+        performance();
+        security();
+        break;
+    elif(packageNumber=='q'):
+        print(bcolors.OKBLUE +bcolors.BOLD+"[i] Exit"+bcolors.ENDC+ bcolors.ENDC);
+        exit();
+    else:
+        print(bcolors.FAIL +"[err] Please enter valid package number or q to exit"+ bcolors.ENDC);
+        packageNumber=input()
+
+
+
+
+
+
